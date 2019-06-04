@@ -12,7 +12,7 @@ public class ObstacleMovement : MonoBehaviour
     {
         //rb.AddForce(0, 0, -movementForce * Time.deltaTime);
         var nw = new Vector3(0, 0, -1);
-        rb.velocity = nw*(velocity + 2*Time.timeSinceLevelLoad);
+        rb.velocity = nw*(velocity + Time.timeSinceLevelLoad + 5);
         
     }
 }
