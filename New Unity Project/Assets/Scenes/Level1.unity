@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.49803925, g: 0.6627451, b: 0.8862746, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.005
+  m_FogDensity: 0.0075
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1021192374}
-  jumbForce: 300
+  jumbForce: 600
   sideForce: 75
 --- !u!54 &1021192374
 Rigidbody:
@@ -1644,11 +1644,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7794768031169637527, guid: 05c30ade03310234ca90ac0f1ecb2d2b,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 7794768031633139418, guid: 05c30ade03310234ca90ac0f1ecb2d2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1704,11 +1699,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7794768031169637527, guid: 05c30ade03310234ca90ac0f1ecb2d2b,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7794768031169637520, guid: 05c30ade03310234ca90ac0f1ecb2d2b,
         type: 3}
       propertyPath: gameScore
       value: 
       objectReference: {fileID: 265162301}
+    - target: {fileID: 7794768031169637521, guid: 05c30ade03310234ca90ac0f1ecb2d2b,
+        type: 3}
+      propertyPath: jumbForce
+      value: 600
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05c30ade03310234ca90ac0f1ecb2d2b, type: 3}
 --- !u!1001 &8395164221278594018
