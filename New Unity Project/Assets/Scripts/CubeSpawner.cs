@@ -18,9 +18,9 @@ public class CubeSpawner : MonoBehaviour
         if(Time.time >= timer)
         {
             //thanks to singleton in objectpooler
-            spawnLocation.x = Random.Range(-floorSize, floorSize);
+            spawnLocation.x = Random.Range(-floorSize, floorSize); 
             objectPooler.Instace.SpawnFromPool("Cube", spawnLocation, Quaternion.identity);
-            timer = Time.time + 1 /spawnRatePerSec; //redondancy but help when restarting the scene
+            timer = Time.time + 1 /spawnRatePerSec; //redundancy but help to not spawn a lot of the objects when restarting the scene
         }
     }
 }

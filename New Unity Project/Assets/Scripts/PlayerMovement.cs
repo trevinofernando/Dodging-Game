@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public float jumbForce = 1000f;
     public float sideForce = 500f;
+    public string dragsound = "Drag1";
     bool canJump = false;
+    float lastSoundTime = -1f;
 
     void OnCollisionEnter(Collision collisionInfo)
     {
@@ -16,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
         if (collisionInfo.collider.tag == "Floor")
         {
             canJump = true;
+            FindObjectOfType<AudioManager>().Play("HitMetal");
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("HitStone");
         }
     }
 
@@ -33,17 +40,33 @@ public class PlayerMovement : MonoBehaviour
     {
         //rb.AddForce(0, 0, fowardForce * Time.deltaTime); //deltatime is number of seconds since last frame
 
-        if( Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            if (canJump )//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f) //only play sound if in contact with the floor
+            {
+                //lastSoundTime = Time.timeSinceLevelLoad;
+                FindObjectOfType<AudioManager>().Play(dragsound);
+            }
         }
-        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            if (canJump )//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f)//only play sound if in contact with the floor
+            {
+                //lastSoundTime = Time.timeSinceLevelLoad;
+                FindObjectOfType<AudioManager>().Play(dragsound);
+            }
         }
         if (canJump && (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)))
         {
-            rb.AddForce(0, jumbForce * Time.deltaTime, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, jumbForce, 0, ForceMode.VelocityChange);
+            FindObjectOfType<AudioManager>().Stop(dragsound);
         }
+        else if(rb.velocity.magnitude < 0.5)
+        {
+            FindObjectOfType<AudioManager>().Stop(dragsound); //if almost not moving, stop dragging sound
+        }
+
     }
 }

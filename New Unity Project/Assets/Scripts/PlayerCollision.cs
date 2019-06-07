@@ -10,7 +10,8 @@ public class PlayerCollision : MonoBehaviour
         
         Debug.Log("Hit with " + collisionInfo.collider.name);
 
-        if(collisionInfo.collider.tag == "DeathBarrier")
+        //if(collisionInfo.collider.tag == "DeathBarrier")
+        if(collisionInfo.collider.CompareTag("DeathBarrier")) //compareTag is more performant
         {
             movement.enabled = false;
             gameScore.stop = true;

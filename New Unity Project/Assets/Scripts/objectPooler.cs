@@ -55,12 +55,14 @@ public class objectPooler : MonoBehaviour
             return null;
         }
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+        Rigidbody rb = objectToSpawn.GetComponent<Rigidbody>();
 
+        rb.angularVelocity = Vector3.zero; //Stop angular momentum before respawn
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
-
-        poolDictionary[tag].Enqueue(objectToSpawn);
+        
+        poolDictionary[tag].Enqueue(objectToSpawn); //back to the queue
         return objectToSpawn;
     }
 
