@@ -5,13 +5,13 @@ using UnityEngine;
 public class CubeSpawner : MonoBehaviour
 {
     public float spawnRatePerSec = 1f;
-    float floorSize = 6.0f;
-    public float timer;
     public Vector3 spawnLocation;
-    void start()
+    float floorSize = 6.0f;
+    float timer;
+    void Start()
     {
         timer = Time.time + 1/spawnRatePerSec;
-        spawnLocation = new Vector3(0.0f, 1.0f, 20.0f);
+        //spawnLocation = new Vector3(0.0f, 1.0f, 20.0f);
     }
     void FixedUpdate()
     {

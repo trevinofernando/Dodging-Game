@@ -7,6 +7,9 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.position + offset; //transform with lowercase referst to THIS object
+        if(player.position.y > 0) //don't follow player below lava
+        {
+            transform.position = player.position + offset; //transform with lowercase referst to THIS object
+        }
     }
 }

@@ -47,4 +47,4 @@ MonoBehaviour:
   - tag: Cube
     prefab: {fileID: 4233578248832045600, guid: 3c29b036223cd87449b7033ec91aa5eb,
       type: 3}
-    size: 15
+    size: 8

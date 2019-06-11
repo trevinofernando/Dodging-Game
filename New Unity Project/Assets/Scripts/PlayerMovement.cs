@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody rb;
+    public GameObject jumpExplosion;
     public float jumbForce = 1000f;
     public float sideForce = 500f;
     public string dragsound = "Drag1";
@@ -19,8 +20,10 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = true;
             FindObjectOfType<AudioManager>().Play("HitMetal");
+            //rb.velocity = Vector3.zero;
+            //rb.angularVelocity = Vector3.zero;
         }
-        else
+        else if(collisionInfo.collider.tag == "Obstacle")
         {
             FindObjectOfType<AudioManager>().Play("HitStone");
         }
@@ -60,10 +63,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (canJump && (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)))
         {
-            rb.AddForce(0, jumbForce, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, jumbForce, 0, ForceMode.Impulse); //transform.up uses the definition of "up" for the object
+
+            Instantiate(jumpExplosion, transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("DarkExplosion");
             FindObjectOfType<AudioManager>().Stop(dragsound);
         }
-        else if(rb.velocity.magnitude < 0.5)
+        else if(rb.velocity.magnitude < 0.3)
         {
             FindObjectOfType<AudioManager>().Stop(dragsound); //if almost not moving, stop dragging sound
         }
