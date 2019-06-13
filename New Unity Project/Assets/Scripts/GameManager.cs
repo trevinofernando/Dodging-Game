@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Stop("MainTheme");
             FindObjectOfType<AudioManager>().Play("GameOverTheme");
             gameHasEnded = true;
-            gameOverScore.text = (Time.timeSinceLevelLoad * 10).ToString("0");
+            gameOverScore.text = (Time.timeSinceLevelLoad * 23).ToString("0");
             gameOverUI.SetActive(true);
             //RestartGame();
             //Invoke("RestartGame", restartDelay);

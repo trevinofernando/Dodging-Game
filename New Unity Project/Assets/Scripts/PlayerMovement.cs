@@ -46,20 +46,24 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-            if (canJump )//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f) //only play sound if in contact with the floor
+            if (canJump && lastSoundTime + 1f < Time.timeSinceLevelLoad)//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f) //only play sound if in contact with the floor
             {
-                //lastSoundTime = Time.timeSinceLevelLoad;
+                lastSoundTime = Time.timeSinceLevelLoad;
                 FindObjectOfType<AudioManager>().Play(dragsound);
             }
         }
         else if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-            if (canJump )//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f)//only play sound if in contact with the floor
+            if (canJump && lastSoundTime + 1f < Time.timeSinceLevelLoad)//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f)//only play sound if in contact with the floor
             {
-                //lastSoundTime = Time.timeSinceLevelLoad;
+                lastSoundTime = Time.timeSinceLevelLoad;
                 FindObjectOfType<AudioManager>().Play(dragsound);
             }
+        }
+        else if(rb.velocity.magnitude < 0.3)
+        {
+            FindObjectOfType<AudioManager>().Stop(dragsound); //if almost not moving, stop dragging sound
         }
         if (canJump && (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)))
         {
@@ -68,10 +72,6 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(jumpExplosion, transform.position, Quaternion.identity);
             FindObjectOfType<AudioManager>().Play("DarkExplosion");
             FindObjectOfType<AudioManager>().Stop(dragsound);
-        }
-        else if(rb.velocity.magnitude < 0.3)
-        {
-            FindObjectOfType<AudioManager>().Stop(dragsound); //if almost not moving, stop dragging sound
         }
 
     }

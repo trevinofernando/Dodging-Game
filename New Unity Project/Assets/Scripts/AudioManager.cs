@@ -1,6 +1,8 @@
 ﻿using UnityEngine.Audio;
 using System;
+using System.Collections;
 using UnityEngine;
+
 
 public class AudioManager : MonoBehaviour
 {
@@ -21,8 +23,9 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForFixedUpdate(); //Wait until everything is loaded before playing the music
         Play("MainTheme");
     }
 

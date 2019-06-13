@@ -7,4 +7,4 @@ In this game the player is a cube that can only jump and move left and right. Mu
 
 ## Goal
 
-Some of my goals for this game is to reduce processing power and practice my Unity skills, one example is the object pooling method implemented, where in the beginning of the game a number of obstacles are created and placed in a queue to be used for spawning them during the game. Doing this eliminates the need to create and destroy objects during run time, since we only need to movethem around.
+Some of my goals for this game is to reduce processing power and practice my Unity skills, one example is the object pooling method implemented, where in the beginning of the game a number of obstacles are created and placed in a queue to be used for spawning them during the game. Doing this eliminates the need to create and destroy objects during run time, since we only need to move them around.

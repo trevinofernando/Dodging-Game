@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text scoreText;
-    public float score = 0;
+    public float score = 0; //powerUp idea
+
+    [HideInInspector]
     public bool stop = false;
 
     // Update is called once per frame
@@ -15,7 +17,7 @@ public class Score : MonoBehaviour
         if (!stop)
         {
             //score = Time.timeSinceLevelLoad * 10f;
-            scoreText.text = (Time.timeSinceLevelLoad * 10).ToString("0");
+            scoreText.text = (Time.timeSinceLevelLoad * 23).ToString("0");
         }
     }
 }
