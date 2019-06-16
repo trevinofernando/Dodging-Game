@@ -27,11 +27,11 @@ public class PlayerCollision : MonoBehaviour
 
             if (!deathSound.Equals("None"))
             {
-                audioManager.Play("BurningInLava");
+                audioManager.Play(deathSound);//("BurningInLava");
             }
             if (!gameOverSound.Equals("None"))
             {
-                audioManager.Play("GameOverEvil");
+                audioManager.Play(gameOverSound); //("GameOverEvil");
             }
 
             if(deathEffect != null)
@@ -41,6 +41,7 @@ public class PlayerCollision : MonoBehaviour
                 collisionInfo.collider.enabled = false; 
                 Time.timeScale = .5f;
                 #endregion
+                
             }
 
 

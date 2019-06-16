@@ -571,11 +571,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8487678628546512853, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8487678627944533400, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -631,11 +626,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8487678628546512853, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8487678628546512851, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
         type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 48969118}
+    - target: {fileID: 8487678628546512851, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
+        type: 3}
+      propertyPath: jumpExplosion
+      value: 
+      objectReference: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
+        type: 3}
+    - target: {fileID: 8487678628546512851, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
+        type: 3}
+      propertyPath: jumpExplosionName
+      value: quickExplosion
+      objectReference: {fileID: 0}
     - target: {fileID: 8487678628546512850, guid: b50e7bf455c966e46a7c06ba8a9b5e13,
         type: 3}
       propertyPath: audioManager
@@ -875,6 +886,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2531628038782086709, guid: f6b40ea9b69778b45a7c8e6b4c67697d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2531628037995122848, guid: f6b40ea9b69778b45a7c8e6b4c67697d,
         type: 3}
       propertyPath: m_Color.g
@@ -888,11 +904,6 @@ PrefabInstance:
     - target: {fileID: 2531628037995122848, guid: f6b40ea9b69778b45a7c8e6b4c67697d,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2531628038782086709, guid: f6b40ea9b69778b45a7c8e6b4c67697d,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2531628038782086711, guid: f6b40ea9b69778b45a7c8e6b4c67697d,

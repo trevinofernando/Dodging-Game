@@ -93,3 +93,9 @@ MonoBehaviour:
     pitch: 0.9
     loop: 0
     source: {fileID: 0}
+  - name: quickExplosion
+    clip: {fileID: 8300000, guid: ee1a4597e4e972e4c9cfea9faf2dbaf5, type: 3}
+    volume: 0.3
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}

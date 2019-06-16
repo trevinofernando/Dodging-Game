@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     public GameObject jumpExplosion;
+    public string jumpExplosionName;
     public AudioManager audioManager;
     public float jumbForce = 1000f;
     public float sideForce = 500f;
@@ -71,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(0, jumbForce, 0, ForceMode.Impulse); //transform.up uses the definition of "up" for the object
 
             Instantiate(jumpExplosion, transform.position, Quaternion.identity);
-            audioManager.Play("DarkExplosion");
+            audioManager.Play(jumpExplosionName);
             audioManager.Stop(dragsound);
         }
 
