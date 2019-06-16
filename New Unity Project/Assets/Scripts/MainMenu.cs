@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public GameObject hellImg;
     public GameObject earthImg;
     public GameObject heavenImg;
+    public GameObject playButton;
     public void PlayGame()
     {
         SceneManager.LoadScene(sceneIndex);
@@ -25,11 +26,6 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void UpdateVolume(float volume)
-    {
-        volumeText.text = (int)(volume * 100) + "%";
-        audioMixer.SetFloat("Volume", volume*100 -80f); //subtract 80 to match mixer format range of -80 to 20
-    }
 
     public void LevelSelect(int levelIndex) // 1 = Hell, 2 = Earth, 3 = Heaven
     {
@@ -38,7 +34,6 @@ public class MainMenu : MonoBehaviour
         {
             case 1:
                 hellImg.transform.SetAsLastSibling();
-                //hellImg.GetComponent<RectTransform>().SetAsLastSibling();
                 break;
             case 2:
                 earthImg.transform.SetAsLastSibling();
@@ -47,5 +42,21 @@ public class MainMenu : MonoBehaviour
                 heavenImg.transform.SetAsLastSibling();
                 break;
         }
+        playButton.transform.SetAsLastSibling();
+    }
+    public void UpdateVolume(float volume)
+    {
+        volumeText.text = (int)(volume * 100) + "%";
+        audioMixer.SetFloat("Volume", volume*100 -80f); //subtract 80 to match mixer format range of -80 to 20
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetFullScreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
     }
 }

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     public GameObject jumpExplosion;
+    public AudioManager audioManager;
     public float jumbForce = 1000f;
     public float sideForce = 500f;
     public string dragsound = "Drag1";
@@ -19,13 +20,13 @@ public class PlayerMovement : MonoBehaviour
         if (collisionInfo.collider.tag == "Floor")
         {
             canJump = true;
-            FindObjectOfType<AudioManager>().Play("HitMetal");
+            audioManager.Play("HitMetal");
             //rb.velocity = Vector3.zero;
             //rb.angularVelocity = Vector3.zero;
         }
         else if(collisionInfo.collider.tag == "Obstacle")
         {
-            FindObjectOfType<AudioManager>().Play("HitStone");
+            audioManager.Play("HitStone");
         }
     }
 
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             if (canJump && lastSoundTime + 1f < Time.timeSinceLevelLoad)//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f) //only play sound if in contact with the floor
             {
                 lastSoundTime = Time.timeSinceLevelLoad;
-                FindObjectOfType<AudioManager>().Play(dragsound);
+                audioManager.Play(dragsound);
             }
         }
         else if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
@@ -58,20 +59,20 @@ public class PlayerMovement : MonoBehaviour
             if (canJump && lastSoundTime + 1f < Time.timeSinceLevelLoad)//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f)//only play sound if in contact with the floor
             {
                 lastSoundTime = Time.timeSinceLevelLoad;
-                FindObjectOfType<AudioManager>().Play(dragsound);
+                audioManager.Play(dragsound);
             }
         }
         else if(rb.velocity.magnitude < 0.3)
         {
-            FindObjectOfType<AudioManager>().Stop(dragsound); //if almost not moving, stop dragging sound
+            audioManager.Stop(dragsound); //if almost not moving, stop dragging sound
         }
         if (canJump && (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)))
         {
             rb.AddForce(0, jumbForce, 0, ForceMode.Impulse); //transform.up uses the definition of "up" for the object
 
             Instantiate(jumpExplosion, transform.position, Quaternion.identity);
-            FindObjectOfType<AudioManager>().Play("DarkExplosion");
-            FindObjectOfType<AudioManager>().Stop(dragsound);
+            audioManager.Play("DarkExplosion");
+            audioManager.Stop(dragsound);
         }
 
     }

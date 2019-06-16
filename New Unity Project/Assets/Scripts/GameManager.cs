@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded;
     public float restartDelay = 1f;
     public GameObject gameOverUI;
+    public Text gameScore;
     public Text gameOverScore;
 
     public void GameOver() //public to be accessed from player collision
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Stop("MainTheme");
             FindObjectOfType<AudioManager>().Play("GameOverTheme");
             gameHasEnded = true;
-            gameOverScore.text = (Time.timeSinceLevelLoad * 23).ToString("0");
+            gameOverScore.text = gameScore.text;
             gameOverUI.SetActive(true);
             //RestartGame();
             //Invoke("RestartGame", restartDelay);

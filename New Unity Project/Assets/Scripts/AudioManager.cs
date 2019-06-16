@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-   
+
+    public AudioMixerGroup audioMixer;
     public Sound[] sounds; //array with all sounds for the game
 
     void Awake() //runs before start method
@@ -19,6 +20,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = audioMixer;
         }
 
     }
