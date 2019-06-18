@@ -8,6 +8,7 @@ public class PlayerCollision : MonoBehaviour
     public AudioManager audioManager;
     public string gameOverSound;
     public string deathSound;
+    public string dragSound;
     
     void OnCollisionEnter(Collision collisionInfo)
     {
@@ -20,7 +21,7 @@ public class PlayerCollision : MonoBehaviour
             movement.enabled = false;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-            audioManager.Stop("Drag1");//Work around, can be improved
+            audioManager.Stop(dragSound);//Work around, can be improved
             //audioManager.Play("Lava"); //Death sound
 
             gameScore.stop = true;

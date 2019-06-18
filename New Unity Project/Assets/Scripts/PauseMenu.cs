@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -8,13 +9,20 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     public static bool gameIsPaused = false;
     public AudioMixer audioMixer;
     public TextMeshProUGUI volumeText;
+    public Slider volumeSlider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Loading Player Preferences...");
+
+        //Retriving previews Volume settings
+        volumeText.text = (int)PlayerPrefs.GetFloat("Volume", 0.8f) * 100 + " %";
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.8f);
+
     }
 
     // Update is called once per frame
@@ -43,6 +51,7 @@ public class PauseMenu : MonoBehaviour
     {
         gameIsPaused = false;
         pauseMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         Time.timeScale = 1f;
     }
     public void GoToMenu()
@@ -54,6 +63,7 @@ public class PauseMenu : MonoBehaviour
     {
         volumeText.text = (int)(volume * 100) + "%";
         audioMixer.SetFloat("Volume", volume * 100 - 80f); //subtract 80 to match mixer format range of -80 to 20
+        PlayerPrefs.SetFloat("Volume", volume);
     }
     public void SetFullScreen(bool isFullscreen)
     {

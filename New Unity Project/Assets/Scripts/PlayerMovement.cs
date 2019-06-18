@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioManager audioManager;
     public float jumbForce = 1000f;
     public float sideForce = 500f;
-    public string dragsound = "Drag1";
+    public string dragSound;
     bool canJump = false;
     float lastSoundTime = -1f;
 
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             if (canJump && lastSoundTime + 1f < Time.timeSinceLevelLoad)//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f) //only play sound if in contact with the floor
             {
                 lastSoundTime = Time.timeSinceLevelLoad;
-                audioManager.Play(dragsound);
+                audioManager.Play(dragSound);
             }
         }
         else if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
@@ -60,12 +60,12 @@ public class PlayerMovement : MonoBehaviour
             if (canJump && lastSoundTime + 1f < Time.timeSinceLevelLoad)//&& (Time.timeSinceLevelLoad - lastSoundTime) > .5f)//only play sound if in contact with the floor
             {
                 lastSoundTime = Time.timeSinceLevelLoad;
-                audioManager.Play(dragsound);
+                audioManager.Play(dragSound);
             }
         }
         else if(rb.velocity.magnitude < 0.3)
         {
-            audioManager.Stop(dragsound); //if almost not moving, stop dragging sound
+            audioManager.Stop(dragSound); //if almost not moving, stop dragging sound
         }
         if (canJump && (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)))
         {
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
             Instantiate(jumpExplosion, transform.position, Quaternion.identity);
             audioManager.Play(jumpExplosionName);
-            audioManager.Stop(dragsound);
+            audioManager.Stop(dragSound);
         }
 
     }

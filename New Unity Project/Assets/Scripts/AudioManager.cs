@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 {
 
     public AudioMixerGroup audioMixer;
+    public string mainThemeTrack;
     public Sound[] sounds; //array with all sounds for the game
 
     void Awake() //runs before start method
@@ -28,7 +29,7 @@ public class AudioManager : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForFixedUpdate(); //Wait until everything is loaded before playing the music
-        Play("MainTheme");
+        Play(mainThemeTrack);
     }
 
     public void Play (string name)

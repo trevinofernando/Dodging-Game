@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24300002, guid: 62e72085384a3994eb00b126e3e11a2f, type: 2}
+  mainThemeTrack: MainTheme
   sounds:
   - name: MainTheme
     clip: {fileID: 8300000, guid: 83a0a974ab25a4adfba3cbb3a1aaa76e, type: 3}
@@ -97,5 +98,41 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ee1a4597e4e972e4c9cfea9faf2dbaf5, type: 3}
     volume: 0.3
     pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: windWoosh
+    clip: {fileID: 8300000, guid: cec0b054e6770f045bb0efa479a803dd, type: 3}
+    volume: 0.139
+    pitch: 1.08
+    loop: 0
+    source: {fileID: 0}
+  - name: lowExplosion
+    clip: {fileID: 8300000, guid: d7651b1c272d7d24da86ac6d835ce406, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ChurchLoop
+    clip: {fileID: 8300000, guid: 8bba776e6bc3c4288b83c2efa5f188db, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: 0dccd2f926fe94ca9bf6ebb93ecfa99a, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DogFight
+    clip: {fileID: 8300000, guid: 32d36c25bc878498baecca74e4fb719f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BigBattle
+    clip: {fileID: 8300000, guid: de251335e1d7645369bab5cd9afb5834, type: 3}
+    volume: 0.3
+    pitch: 1
     loop: 0
     source: {fileID: 0}

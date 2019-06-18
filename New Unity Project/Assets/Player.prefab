@@ -126,10 +126,11 @@ MonoBehaviour:
   rb: {fileID: 8487678628546512848}
   jumpExplosion: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}
+  jumpExplosionName: 
   audioManager: {fileID: 0}
   jumbForce: 8
   sideForce: 100
-  dragsound: Drag1
+  dragSound: Drag1
 --- !u!114 &8487678628546512850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +150,4 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   gameOverSound: GameOverEvil
   deathSound: BurningInLava
+  dragSound: Drag1
