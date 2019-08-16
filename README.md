@@ -1,7 +1,7 @@
 # Dodging-Game
 A game created using the Unity game engine where the primary goal is to try not to fall from the platform.
 
-![alt text](https://github.com/trevinofernando/Dodging-Game/New%20Unity%20Project/Assets/Imports/Imgs/DodgingGameIcon.png)
+![alt text](https://raw.githubusercontent.com/trevinofernando/Dodging-Game/master/New%20Unity%20Project/Assets/Imports/Imgs/DodgingGameIcon.png)
 
 ## Description
 
