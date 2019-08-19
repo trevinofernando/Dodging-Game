@@ -9,7 +9,7 @@ In this game the player is a cube that can only jump and move left and right. Mu
 
 ### How to Play
 
-To start the game, visit the **link:** https://trevinofernando.github.io/Dodging-Game/. Then make sure to adjust, in the **Options menu**, the *volume, quality level* and if you want *fullscreen* or not. Then simply click the **Back** button to return to the main menu. Now you are all set, click **Play**, *select* one ot the 3 *levels* and click **Play** on the preview image.
+To start the game, visit the **link:** https://trevinofernando.github.io/Dodging-Game/. Then make sure to adjust, in the **Options menu**, the *volume, quality level* and if you want *full screen* or not. Then simply click the **Back** button to return to the main menu. Now you are all set, click **Play**, *select* one of the 3 *levels* and click **Play** on the preview image.
 
 This game is meant to be played on **PC** with a **keyboard**. Here are the controls:
 * **Pause:** "q" / "p"
@@ -19,15 +19,21 @@ This game is meant to be played on **PC** with a **keyboard**. Here are the cont
 
 ### Level Design
 
-This game features 3 main levels **"Hell", "Earth", and "Heaven"**. Each of which features its own music theme as well as custoum VFX and sound effects to fit the atmosphere.
+This game features 3 main levels **"Hell", "Earth", and "Heaven"**. Each of which features its own music theme as well as custom  VFX and sound effects to fit the atmosphere.
 
 * **Earth:** Difficulty = **Easy**. The field of view is the largest of the 3 levels. The lighting makes it easy to see the obstacles from far away. Jumping effect is a dusty type. This is the only level with a static death scene.
 
 * **Heaven:** Difficulty = **Medium**. This level makes the introduction of clouds. Clouds will rise and fall periodically during the game, covering the platform to keep you guessing where it ends. This level was the last one to be created and features a similar death effect as the Hell level.
 
-* **Hell:** Difficulty = **Hard**. I spent the most amount of time in this level. It features custoum sound effects as well as more agressive VFX. This level introduced the **"Wall of Fire"**, which moves back and forth towards the player with the intention to limit how far the player can see. The death animation slows time and disables floor collisions to fake a disolving effect.
+* **Hell:** Difficulty = **Hard**. I spent the most amount of time in this level. It features custom  sound effects as well as more aggressive  VFX. This level introduced the **"Wall of Fire"**, which moves back and forth towards the player with the intention to limit how far the player can see. The death animation slows time and disables floor collisions to fake a dissolving effect.
 
 ## Developer Goal
 
 Some of my goals for this game is to *reduce processing* power and *practice* my Unity skills, one example is the *Object Pooling* method implemented, where in the beginning of the game a number of obstacles are created and placed in a queue to be used for spawning them during the game. Doing this eliminates the need to create and destroy objects during run time, since we only need to move them around. 
 
+### Common Errors and Solutions
+
+1. If after following the link to the game, nothing shows:
+* GitHub could be under maintenance, wait between 5 to 10 minutes and try again.
+* Or it could be the unlikely scenario where my game has stopped being hosted under this link. If no other link is given that means that I am currently not aware of this issue or I am currently working on a fix.
+2. If the game starts and music can be heard but no images are visible (Black screen), then your browser might not be compatible  with this version of WebGL and you need to use a different browser. If the same problem persists, try updating your browsers.
